@@ -7,7 +7,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Clone the repository
-RUN git clone https://github.com/gnapoli13/EdoHided.git .
+RUN git clone https://github.com/gnapoli13/EdoX.git .
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 #EXPOSE the port, for now default is 8080 cause it's the only one really allowed by HuggingFace
