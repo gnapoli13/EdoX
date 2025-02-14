@@ -236,10 +236,12 @@ async def get_episode_link(episode_id,tid,version,client):
     if 'canPlayFHD' in query_params:
        canPlayFHD = 'h=1'
        url += "&h=1"
+
+    '''     
     if 'b=1' in base_url:
        b = 'b=1'
        url += "&b=1"
-    '''
+
     if quality == "1080":
         if "&h" in url:
             url = url
