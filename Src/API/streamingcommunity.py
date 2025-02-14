@@ -245,10 +245,10 @@ async def get_episode_link(episode_id,tid,version,client):
     resp = await client.get(ForwardProxy + iframe, headers = random_headers, allow_redirects=True, impersonate = "chrome124", proxies = proxies2)
     soup=  BeautifulSoup(resp.text, "lxml")
     script = soup.find("body").find("script").text
-    token = safe_search(r"'token':\s*'(\w+)'", script).group(1)
-    expires = safe_search(r"'expires':\s*'(\d+)'", script).group(1)
-    quality = safe_search(r'"quality":(\d+)', script).group(1)
-    base_url = safe_search(r"url:\s*'(https?://[^']+)'", script).group(1)
+    token = safe_search(r"'token':\s*'(\w+)'", script)
+    expires = safe_search(r"'expires':\s*'(\d+)'", script)
+    quality = safe_search(r'"quality":(\d+)', script)
+    base_url = safe_search(r"url:\s*'(https?://[^']+)'", script)
         # Now check if any of the values are None before using them
     if token is None:
         print("Token not found.")
